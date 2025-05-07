@@ -21,10 +21,11 @@ const Header = async () => {
           <div className="flex items-center gap-2">
             <div className="w-32 h-12 relative overflow-hidden rounded-md">
               <Button asChild className="w-full h-full p-0" variant={"card"}>
-                <Link href={`/user/${user.id}`}>
+                {/* @ts-expect-error user.id-exists */}
+                <Link href={`/user/${user.id ? user.id : ""}`}>
                   <Image
                     className="rounded-full"
-                    src={user.image}
+                    src={user.image ? user.image : "/user.png"}
                     alt="User"
                     width={32}
                     height={32}
@@ -33,7 +34,9 @@ const Header = async () => {
                 </Link>
               </Button>
             </div>
-            <Link href="/">R$: {user.balance.toFixed(2)}</Link>
+            <Link href="/">
+              R$: {user.balance ? user.balance.toFixed(2) : "0.00"}
+            </Link>
           </div>
         ) : (
           <div></div>
