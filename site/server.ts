@@ -18,7 +18,7 @@ const httpsOptions = {
   ),
   minVersion: "TLSv1.2",
   requestCert: true,
-  rejectUnauthorized: dev,
+  rejectUnauthorized: !dev,
 };
 app.prepare().then(() => {
   createServer(
