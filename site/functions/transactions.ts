@@ -27,8 +27,7 @@ export class Transaction {
       await efi.pixConfigWebhook(
         { chave: ownerKey },
         {
-          webhookUrl:
-            "https://3af7-45-160-49-227.ngrok-free.app/api/webhook/pix",
+          webhookUrl: "https://plataforma-apostas.vercel.app/api/webhook/pix",
         }
       );
       await efi.pixSend(
