@@ -3,8 +3,8 @@ import { auth } from "@/lib/auth";
 import { Button } from "../ui/button";
 import Link from "next/link";
 const Header = async () => {
-  // @ts-expect-error user-does-in-fact-exist
-  const { user } = await auth();
+  const session = await auth();
+  const user = session?.user ?? null;
   return (
     <header className="w-full h-20 py-2 px-4 border-b-2 border-border">
       <nav className="flex items-center justify-between">
