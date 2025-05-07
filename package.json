@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "dev": "npx concurrently \"cd site && npm run dev\" \"cd mobile && npm start\""
+    }
+}

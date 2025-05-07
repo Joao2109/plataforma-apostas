@@ -127,6 +127,7 @@ exports.Prisma.UserScalarFieldEnum = {
   emailVerified: 'emailVerified',
   image: 'image',
   balance: 'balance',
+  role: 'role',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -192,6 +193,12 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
+exports.Role = exports.$Enums.Role = {
+  ADMIN: 'ADMIN',
+  OWNER: 'OWNER',
+  USER: 'USER'
+};
+
 exports.PixKeyType = exports.$Enums.PixKeyType = {
   CPF: 'CPF',
   CNPJ: 'CNPJ',
