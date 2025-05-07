@@ -13,5 +13,5 @@ export const efi = new EfiPay({
     process.env.EFI_CERTIFICATE ??
       "./certificates/homologacao-758193-testes_cert.pem"
   ),
-  sandbox: true,
+  sandbox: false,
 });

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { auth } from "@/lib/auth";
+import { auth, signOut } from "@/lib/auth";
 import { Button } from "../ui/button";
 import Link from "next/link";
 const Header = async () => {
@@ -34,12 +34,31 @@ const Header = async () => {
                 </Link>
               </Button>
             </div>
-            <Link href="/">
-              R$: {user.balance ? user.balance.toFixed(2) : "0.00"}
-            </Link>
+            <p>R$: {user.balance ? user.balance.toFixed(2) : "0.00"}</p>
+            <form
+              action={async () => {
+                "use server";
+                await signOut();
+              }}
+            >
+              <Button
+                variant={"outline"}
+                type="submit"
+                className="cursor-pointer"
+              >
+                Sair
+              </Button>
+            </form>
           </div>
         ) : (
-          <div></div>
+          <div className="flex gap-2">
+            <Button asChild>
+              <Link href={"/auth/sign-in"}>Sign In</Link>
+            </Button>
+            <Button asChild>
+              <Link href={"/auth/sign-up"}>Sign Up</Link>
+            </Button>
+          </div>
         )}
       </nav>
     </header>

@@ -1,5 +1,4 @@
 import NextAuth from "next-auth";
-
 declare module "next-auth" {
   interface Session {
     user: {
@@ -9,16 +8,13 @@ declare module "next-auth" {
       balance?: number;
     };
   }
-
   interface User {
     balance?: number;
   }
 }
-
 declare module "next-auth/jwt" {
   interface JWT {
     balance?: number;
   }
 }
-
 export default NextAuth;

@@ -1,3 +1,4 @@
+import Footer from "@/components/shared/footer";
 import "./globals.css";
 import Header from "@/components/shared/header";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -18,6 +19,7 @@ export default function RootLayout({
         >
           <Header />
           {children}
+          <Footer />
           <ThemeToggler />
         </ThemeProvider>
       </body>
