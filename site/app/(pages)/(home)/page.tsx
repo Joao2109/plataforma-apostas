@@ -38,7 +38,11 @@ export default function Home() {
                 .map((_, i) => {
                   return (
                     <CarouselItem key={i} className="basis-40 h-40 ml-8 p-0">
-                      <GamePreview className="w-40 h-40" game={games[i]} />
+                      <GamePreview
+                        acessos
+                        className="w-40 h-40"
+                        game={games[i]}
+                      />
                     </CarouselItem>
                   );
                 })}

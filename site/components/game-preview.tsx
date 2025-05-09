@@ -4,11 +4,13 @@ import Image from "next/image";
 import { GamePreview as Game } from "@/types/game-preview";
 interface GamePreviewProps {
   className?: string;
+  acessos?: boolean;
   game: Game;
 }
 const GamePreview = ({
   className,
-  game: { id, title, bannerUrl, description },
+  acessos,
+  game: { id, title, bannerUrl, description, accesses },
 }: GamePreviewProps) => {
   return (
     <Link
@@ -19,6 +21,9 @@ const GamePreview = ({
         className
       )}
     >
+      {acessos && (
+        <p className="absolute top-2 right-2 text-xs">{accesses} acessos</p>
+      )}
       <Image className="-z-[1]" src={bannerUrl} alt={title} fill />
       <div className="w-full h-1/2 bg-black/50 absolute bottom-[-100%] left-0 transition-all duration-1000 ease-in-out group-hover:bottom-0">
         <h3 className="font-semibold text-center">{title}</h3>

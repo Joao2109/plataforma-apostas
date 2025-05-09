@@ -34,7 +34,9 @@ const Header = async () => {
                 </Link>
               </Button>
             </div>
-            <p>R$: {user.balance ? user.balance.toFixed(2) : "0.00"}</p>
+            <p className="text-xs sm:text-sm md:text-lg">
+              R$: {user.balance ? user.balance.toFixed(2) : "0.00"}
+            </p>
             <form
               action={async () => {
                 "use server";
